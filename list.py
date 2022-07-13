@@ -35,3 +35,6 @@ print(threes)
 names = ["chidera", "amaka", "uche", "obioma", "emeka"]
 print(names[0:3])
 print(names)
+
+
+
