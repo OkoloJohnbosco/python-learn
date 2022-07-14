@@ -53,3 +53,31 @@ def make_pizza(size, *toppings):
 
 make_pizza(16, 'pepperoni')
 make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+# Sometimes you’ll want to accept an arbitrary number of arguments, but you
+# won’t know ahead of time what kind of information will be passed to the
+# function. In this case, you can write functions that accept as many key-value
+# pairs as the calling statement provides. One example involves building user
+# profiles: you know you’ll get information about a user, but you’re not sure
+# what kind of information you’ll receive. The function build_profile() in the
+# Functions 149
+# following example always takes in a first and last name, but it accepts an
+# arbitrary number of keyword arguments as well:
+
+
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    # The double asterisks before the parameter **user_info cause Python to create
+    # an empty dictionary called user_info and pack whatever name-value pairs
+    # it receives into this dictionary.
+    
+    print(type(user_info))
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+
+
+user_profile = build_profile('albert', 'einstein',
+                             location='princeton',
+                             field='physics')
+print(user_profile)
