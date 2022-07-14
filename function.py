@@ -1,4 +1,8 @@
+import pizz
+
 # Defining a simple fxn
+
+
 def greet_user():
     print("Hello world")
 
@@ -65,19 +69,21 @@ make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 # arbitrary number of keyword arguments as well:
 
 
-def build_profile(first, last, **user_info):
-    """Build a dictionary containing everything we know about a user."""
-    # The double asterisks before the parameter **user_info cause Python to create
-    # an empty dictionary called user_info and pack whatever name-value pairs
-    # it receives into this dictionary.
-    
-    print(type(user_info))
-    user_info['first_name'] = first
-    user_info['last_name'] = last
-    return user_info
+# def build_profile(first, last, **user_info):
+#     """Build a dictionary containing everything we know about a user."""
+#     # The double asterisks before the parameter **user_info cause Python to create
+#     # an empty dictionary called user_info and pack whatever name-value pairs
+#     # it receives into this dictionary.
+
+#     print(type(user_info))
+#     user_info['first_name'] = first
+#     user_info['last_name'] = last
+#     return user_info
 
 
-user_profile = build_profile('albert', 'einstein',
-                             location='princeton',
-                             field='physics')
-print(user_profile)
+# user_profile = build_profile('albert', 'einstein',
+#                              location='princeton',
+#                              field='physics')
+# print(user_profile)
+
+pizz.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
