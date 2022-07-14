@@ -28,3 +28,14 @@ musician = get_formatted_name('jimi', 'hendrix')
 print(musician)
 musician = get_formatted_name('john', 'hooker', 'lee')
 print(musician)
+
+
+def make_pizza(*toppings):
+    """Print the list of toppings that have been requested."""
+    print(type(toppings))
+    print(toppings.count('mushrooms'))
+    print(toppings)
+
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'extra cheese', 'green peppers', 'extra cheese')
