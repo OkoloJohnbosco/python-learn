@@ -1,3 +1,4 @@
+import time
 import pizz
 
 # Defining a simple fxn
@@ -87,3 +88,41 @@ make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 # print(user_profile)
 
 pizz.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+
+def is_prime(given):
+    start = time.time()
+    answer = False
+    if given <= 1:
+        end = time.time()
+        print(end - start)
+        return answer
+    if given == 2:
+        answer = True
+        end = time.time()
+        print(end - start)
+        return answer
+    divisible_by = [value for value in range(2, given) if given % value == 0]
+    if divisible_by:
+        end = time.time()
+        print(end - start)
+        return answer
+    else:
+        answer = True
+        return True
+    end = time.time()
+    print(end - start)
+
+    flag = False
+
+
+def is_prime(given_number):
+    if given_number <= 1:
+        return False
+    elif given_number == 2:
+        return True
+
+    for each_number in range(2, given_number):
+        if given_number % each_number == 0:
+            return False
+    return True

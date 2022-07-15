@@ -1,4 +1,4 @@
-bic = ["bosco", "uche", "dad", "boy"];
+bic = ["bosco", "uche", "dad", "boy"]
 # print(bic)
 
 bic.reverse()
@@ -21,7 +21,7 @@ print(min(boy))
 
 first_squares = []
 
-for value in range(1,11):
+for value in range(1, 11):
     first_squares.append(value ** 2)
 print(first_squares)
 
@@ -36,5 +36,7 @@ names = ["chidera", "amaka", "uche", "obioma", "emeka"]
 print(names[0:3])
 print(names)
 
-
-
+# LIST COMPREHENDSION
+# [f(x) if x is not None else '' for x in xs]
+# [f(x) if condition else g(x) for x in sequence]
+# [f(x) for x in sequence if condition]
