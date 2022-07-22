@@ -1,5 +1,6 @@
 import time
 import pizz
+from random import randint
 
 # Defining a simple fxn
 
@@ -126,3 +127,6 @@ def is_prime(given_number):
         if given_number % each_number == 0:
             return False
     return True
+
+
+print(randint(1, 100))
