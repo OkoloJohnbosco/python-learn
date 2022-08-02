@@ -11,7 +11,14 @@ from item import Item
 #     print(instance.name)
 
 
-Item.instantiate_from_csv()
-my_phones = Phone("Techno", 2000, 4, 5)
-print(Item.all)
-# print(Phone.all)
+# Item.instantiate_from_csv()
+# my_phones = Phone("Techno", 2000, 4, 5)
+# print(my_phones.name)
+# print(Item.all)
+# # print(Phone.all)
+
+item1 = Item("MyItem", 750)
+print(item1.price)
+
+item1.apply_increment(0.2)
+print(item1.price)
