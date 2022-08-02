@@ -29,12 +29,31 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
-        with open('items.csv', r) as f:
+        with open('item.csv', "r") as f:
             reader = csv.DictReader(f)
             items = list(reader)
         pass
         for item in items:
-            print(item)
+            # Instantiate the class
+            Item(
+                name=item.get('name'),
+                price=int(item.get('price')),
+                quantity=int(item.get('quantity'))
+            )
+
+    @staticmethod
+    def is_integer(num):
+        # we will count out the floats that are point zero
+        # I.E 5.0, 10.0
+
+        if isinstance(num, float):
+            # Count out the float that are point zero
+            return num.is_integer
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
+        pass
 
     def __repr__(self) -> str:
         return f"Item ('{self.name}', {self.price}, {self.quantity})"
@@ -45,13 +64,20 @@ class Item:
 # my_item.apply_discount()
 
 
-item1 = Item("Phone", 100, 1)
-item1 = Item("Laptop", 1000, 3)
-item1 = Item("Cable", 10, 5)
-item1 = Item("Mouse", 50, 5)
-item1 = Item("Keyboard", 75, 5)
-
 # for instance in Item.all:
 #     print(instance.name)
 
+class Phone(Item):
+    all = []
+    def __init__(self,name: str, price: int, quantity=0, broken_phones = 0):
+        super().__init__(name, price, quantity)
+
+        # Run validation to receive arguments specific to the Phone class
+        assert broken_phones >= 0, f"BrokenPhones {broken_phones} is not greater than Zero!"
+        
+        # Assign to self obj
+        self.broken_phones = broken_phones
+
+Item.instantiate_from_csv()
+my_phones = Phone("Techno", 2000, 4, 5)
 print(Item.all)
