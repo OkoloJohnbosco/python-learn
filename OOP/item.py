@@ -11,13 +11,17 @@ class Item:
         assert quantity >= 0, f"Quantity {quantity} is not greater than Zero!"
 
         # Assign to self object
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
         self.pay_value = Item.pay_value
 
         # Append to the [all] list when u create an instance
         Item.all.append(self)
+
+    @property
+    def name(self):
+        return self.__name
 
     def calculate_total_price(self):
         total = self.price * self.quantity

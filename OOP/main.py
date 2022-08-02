@@ -11,8 +11,7 @@ from item import Item
 #     print(instance.name)
 
 
-# Item.instantiate_from_csv()
+Item.instantiate_from_csv()
 my_phones = Phone("Techno", 2000, 4, 5)
 print(Item.all)
-print(Phone.all)
-print(Phone.pay_value)
+# print(Phone.all)
